@@ -1,7 +1,4 @@
-from typing import Union
-
-
-def multiply_numbers(inputs: Union[str, float, list, None]) -> Union[int, None]:
+def multiply_numbers(inputs: Union[str, float, list, None]) -> int | None:
     if inputs is None:
         return None
     elements = str(inputs)

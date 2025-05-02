@@ -1,7 +1,4 @@
-from typing import Union
-
-
-def max_odd(array: list) -> Union[int, None]:
+def max_odd(array: list) -> int | None:
     odd_numbers = list(
         filter(
             lambda el: (
