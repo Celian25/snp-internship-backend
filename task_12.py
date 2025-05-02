@@ -1,4 +1,4 @@
-from .task_11 import Dessert
+from task_11 import Dessert
 
 
 class JellyBean(Dessert):
@@ -16,3 +16,6 @@ class JellyBean(Dessert):
         if self._flavour == 'black licorice':
             return False
         return True
+
+
+print(JellyBean(flavour='black licorice').is_delicious())
