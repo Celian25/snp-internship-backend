@@ -11,10 +11,10 @@ class EvenNumbers:
         if self.count >= self.stop:
             raise StopIteration
 
-        result = self.cur
+        x = self.cur
         self.cur += 2
         self.count += 1
-        return result
+        return x
 
 
 evens = EvenNumbers(5)
