@@ -1,4 +1,4 @@
-def multiply_numbers(inputs: Union[str, float, list, None]) -> int | None:
+def multiply_numbers(inputs) -> int | None:
     if inputs is None:
         return None
     elements = str(inputs)
@@ -15,6 +15,3 @@ def multiply_numbers(inputs: Union[str, float, list, None]) -> int | None:
     for num in numbers:
         buff *= num
     return buff
-
-
-print(multiply_numbers([5, 6, 4]))

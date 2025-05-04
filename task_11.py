@@ -1,5 +1,5 @@
 class Dessert:
-    def __init__(self, name: str = '', calories: int | float = 0):
+    def __init__(self, name: str = "", calories: int | float = 0):
         self._name = name
         self._calories = calories
 
@@ -20,9 +20,3 @@ class Dessert:
 
     def is_delicious(self) -> bool:
         return True
-
-
-dessert = Dessert()
-# dessert.set_name('Cookie')
-# print(dessert.get_name())
-print(dessert.is_delicious())

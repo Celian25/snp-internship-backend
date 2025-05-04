@@ -10,6 +10,3 @@ def max_odd(array: list) -> int | None:
         )
     )
     return int(max(odd_numbers)) if odd_numbers else None
-
-
-print(max_odd([21.0, 2, 6, 4, 3]))
