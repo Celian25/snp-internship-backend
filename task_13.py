@@ -1,5 +1,4 @@
 from functools import lru_cache, update_wrapper
-from typing import Callable, Any
 from math import floor
 import time
 
@@ -14,12 +13,12 @@ def cached(max_size: int | None = None, seconds: int | None = None):
 
     hash_gen = _ttl_hash_gen(ttl)
 
-    def wrapper(func: Callable) -> Callable:
+    def wrapper(func: Callable):
         @lru_cache(max_size=max_size)
         def ttl_func(ttl_hash, *args, **kwargs):
             return func(*args, **kwargs)
 
-        def wrapped(*args, **kwargs) -> Any:
+        def wrapped(*args, **kwargs):
             th = next(hash_gen)
             return ttl_func(th, *args, **kwargs)
 
