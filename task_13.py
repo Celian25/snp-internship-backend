@@ -13,7 +13,7 @@ def cached(max_size: int | None = None, seconds: int | None = None):
 
     hash_gen = _ttl_hash_gen(ttl)
 
-    def wrapper(func: Callable):
+    def wrapper(func):
         @lru_cache(max_size=max_size)
         def ttl_func(ttl_hash, *args, **kwargs):
             return func(*args, **kwargs)

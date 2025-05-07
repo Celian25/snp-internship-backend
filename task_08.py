@@ -1,4 +1,4 @@
-def multiply_numbers(inputs) -> int | None:
+def multiply_numbers(inputs=None) -> int | None:
     if inputs is None:
         return None
     elements = str(inputs)
