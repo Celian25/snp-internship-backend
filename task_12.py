@@ -15,6 +15,6 @@ class JellyBean(Dessert):
         self._flavor = data if isinstance(data, str) and data else self._flavor
 
     def is_delicious(self):
-        if self._flavour == "black licorice":
+        if self._flavor == "black licorice":
             return False
         return True
