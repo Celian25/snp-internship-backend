@@ -3,20 +3,24 @@ class Dessert:
         self._name = name
         self._calories = calories
 
-    def get_name(self) -> str:
+    @property
+    def name(self) -> str:
         return self._name
 
-    def set_name(self, data) -> None:
+    @name.setter
+    def name(self, data) -> None:
         self._name = data if isinstance(data, str) and data else self._name
 
-    def get_calories(self) -> int | float:
+    @property
+    def calories(self) -> int | float:
         return self._calories
 
-    def set_calories(self, data) -> None:
+    @calories.setter
+    def calories(self, data) -> None:
         self._calories = data if isinstance(data, (int, float)) else self._calories
 
     def is_healthy(self) -> bool:
-        return self._calories < 200
+        return float(self._calories) < 200
 
     def is_delicious(self) -> bool:
         return True

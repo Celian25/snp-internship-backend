@@ -8,7 +8,7 @@ class NoSuchStrategyError(Exception):
 
 def rps_game_winner(game: list) -> str:
     check_win = [["R", "S"], ["S", "P"], ["P", "R"]]
-    if len(game) > 2:
+    if len(game) != 2:
         raise WrongNumberOfPlayersError
     if game[0][1] not in ["R", "P", "S"] or game[1][1] not in ["R", "P", "S"]:
         raise NoSuchStrategyError
