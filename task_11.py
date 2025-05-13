@@ -1,6 +1,6 @@
 class Dessert:
     def __init__(self, name: str = "", calories: int | float = 0):
-        self._name = name
+        self._name = name if isinstance(name, str) and name else ""
         self._calories = calories
 
     @property
@@ -12,15 +12,17 @@ class Dessert:
         self._name = data if isinstance(data, str) and data else self._name
 
     @property
-    def calories(self) -> int | float:
+    def calories(self):
         return self._calories
 
     @calories.setter
     def calories(self, data) -> None:
-        self._calories = data if isinstance(data, (int, float)) else self._calories
+        self._calories = data
 
     def is_healthy(self) -> bool:
-        return float(self._calories) < 200
+        if isinstance(self._calories, (int,float)):
+            return float(self._calories) < 200
+        return True
 
     def is_delicious(self) -> bool:
         return True
