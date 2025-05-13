@@ -2,9 +2,9 @@ from task_11 import Dessert
 
 
 class JellyBean(Dessert):
-    def __init__(self, name: str = "", calories: int | float = 0, flavor: str = ""):
+    def __init__(self, name: str = "", calories: int | float | str = 0, flavor: str = ""):
         super().__init__(name, calories)
-        self._flavor = flavor if isinstance(flavor, str) and flavor else ""
+        self.flavor = flavor
 
     @property
     def flavor(self) -> str:
@@ -12,9 +12,10 @@ class JellyBean(Dessert):
 
     @flavor.setter
     def flavor(self, data) -> None:
-        self._flavor = data if isinstance(data, str) and data else self._flavor
+        self._flavor = data if isinstance(data, str) and data else ""
 
-    def is_delicious(self):
-        if self._flavor.lower() == "black licorice" and isinstance(self._flavor, str):
+    def is_delicious(self) -> bool:
+        if self._flavor.lower().strip() == "black licorice":
             return False
         return True
+
